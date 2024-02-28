@@ -40,19 +40,16 @@
 	std::cout << trameCAN << std::endl;
 
 
-	if (Repeter == true) {
+	if (Repeter = true) {
 			while(true){
-				strcpy(idCAN, "0B6");
-
-				monclient.SeConnecterAUnServeur("172.20.21.26", 4111);
+				truc = "0B6";
+				idCAN = truc.data();
 				monclient.Envoyer(idCAN,strlen(idCAN));
 				monclient.Recevoir(trameCAN,50);
 				std::cout << "Trame Moteur : " << trameCAN << std::endl;
-				Sleep(1200);
+				Sleep(1000);
 
-				strcpy(idCAN, "128");
-
-	monclient.SeConnecterAUnServeur("172.20.21.26", 4111);
+				idCAN = "128";
 				monclient.Envoyer(idCAN,strlen(idCAN));
 				monclient.Recevoir(trameCAN,50);
 				std::cout << "Trame Feux : " << trameCAN << std::endl;
