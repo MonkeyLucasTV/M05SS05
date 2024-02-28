@@ -5,7 +5,7 @@
 
 
 
-unsigned int ChaineHexaVersInt(char* chaineHexa, int nbCar){
+unsigned int ChaineHexaVersInt(char* chaineHexa[], int nbCar){
 	int nombre,j = 0;
 	char caractere;
 	for( j=0 ; j<nbCar ; j++ ){

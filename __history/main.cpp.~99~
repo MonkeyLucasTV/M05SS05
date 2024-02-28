@@ -5,15 +5,15 @@
 
 
 
-unsigned int ChaineHexaVersInt(char* chaineHexa, int nbCar){
-	int nombre,j = 0;
-	char caractere;
-	for( j=0 ; j<nbCar ; j++ ){
+unsigned int ChaineHexaVersInt(char * chaineHexa[], int nbCar){
+	int nombre = 0,j;
+	char *caractere;
+	for(j=0;j<nbCar;j++){
 		caractere = chaineHexa[j];
-		if (caractere >='0' && caractere <= '9') {
+		if ((caractere >='0' && caractere <= '9') {
 			nombre = nombre + ((caractere -'0')<<(4*(nbCar-j-1)));
 		}
-		else nombre = nombre + ((caractere - 'A'+10)<<(4*nbCar-j-1));
+		else nombre = nombre + ((caractere - 'A'+10)<<(4*nbCar-j-1)));
 	}
 	return nombre;
 }
