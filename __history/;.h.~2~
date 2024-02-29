@@ -1,0 +1,13 @@
+
+
+class CombineC4   {
+
+	private:
+
+	public:
+
+	CombineC4();
+	~CombineC4();
+	unsigned int ChaineHexaVersInt(char* chaineHexa, int nbCar);
+
+};
