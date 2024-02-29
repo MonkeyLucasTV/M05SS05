@@ -1,5 +1,6 @@
 #include "combinec4.h"
 #include "IRClientTCP.h"
+#include <iostream>
 
 CombineC4::CombineC4(){
 }
@@ -31,53 +32,64 @@ void CombineC4::EnregistreDonnesCAN(char* idCAN, char* trameCAN){
 
 	idCAN = idCAN;
 	trameCAN = trameCAN;
-
 	vitesse =  (ChaineHexaVersInt(trameCAN+23, 2)) * 2.55;
     regime = (ChaineHexaVersInt(trameCAN+19,2)) *100 /3.1;
-
-
-
 	strcpy(idCAN, "128");
 	monclient.SeConnecterAUnServeur("127.0.0.1", 4111);
 	monclient.Envoyer(idCAN,strlen(idCAN));
 	monclient.Recevoir(trameCAN,50);
 	int EtatFeux = ChaineHexaVersInt(trameCAN+27, 2)  ;
 
-	 position = EtatFeux & (0x01 << 7);
-	 Croisement = EtatFeux & (0x01 << 6);
-	 Route = EtatFeux & (0x01 << 5);
-	 AbAv = EtatFeux & (0x01 << 4);
-	 AbAr = EtatFeux & (0x01 << 3);
-	 ClignD = EtatFeux & (0x01 << 2);
-	 ClignG = EtatFeux & (0x01 << 1);
+	 position = (EtatFeux & (0x01 << 7));
+	 croisement = (EtatFeux & (0x01 << 6));
+	 route = (EtatFeux & (0x01 << 5));
+	 AbAv = (EtatFeux & (0x01 << 4));
+	 AbAr = (EtatFeux & (0x01 << 3));
+	 clignoD = (EtatFeux & (0x01 << 2));
+	 clignoG = (EtatFeux & (0x01 << 1));
 }
+
 
 int CombineC4::Vitesse(){
 	return vitesse;
+}
+
+
+int CombineC4::Regime(){
+
+	return regime;
 }
 
 int CombineC4::Croisement(){
 	return croisement;
 }
 
-int CombineC4::AntiBrouillard(){
-	return antiBrouillard;
+
+int CombineC4::AntiBrouillardAvant(){
+	return AbAv;
+}
+
+int CombineC4::AntiBrouillardArriere(){
+	return AbAr;
 }
 
 int CombineC4::Route(){
 	return route;
 }
 
+
 int CombineC4::ClingoD(){
-	return clignoD
+	return clignoD;
 }
+
 
 int CombineC4::ClignoG(){
 	return clignoG;
 }
 
+
 int CombineC4::Position(){
-	return postion;
+	return position;
 }
 
 

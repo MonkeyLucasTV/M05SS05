@@ -2,87 +2,87 @@
 #include <iostream>
 #include "IRClientTCP.h"
 #include<windows.h>
+#include "combinec4.h"
 
 
-
-unsigned int ChaineHexaVersInt(char* chaineHexa, int nbCar){
-	int nombre=0,j = 0;
-	char caractere;
-	for( j=0 ; j<nbCar ; j++ ){
-		caractere = chaineHexa[j];
-		//std::cout << "Le caractere : " << caractere << std::endl;
-		if(caractere >='0' && caractere <= '9'){
-			nombre = nombre + ((caractere -'0')<<(4*(nbCar-j-1)));
-			//std::cout << "Le nombre : " << nombre << std::endl;
-		}
-		else{
-			nombre = nombre + ((caractere - 'A'+10)<<(4*(nbCar-j-1)));
-			//std::cout << "Le nombre : " << nombre << std::endl;
-		}
-	}
-	return nombre;
-}
-
-void EtatDesFeux(int Valeur){
-
-	int position = Valeur & (0x01 << 7);
-	int Croisement = Valeur & (0x01 << 6);
-	int Route = Valeur & (0x01 << 5);
-	int AbAv = Valeur & (0x01 << 4);
-	int AbAr = Valeur & (0x01 << 3);
-	int ClignD = Valeur & (0x01 << 2);
-    int ClignG = Valeur & (0x01 << 1);
-
-	//std::cout <<  Valeur << " "<<  position << " "<<  Croisement << " "<< Route << " "<< AbAv << " "<< AbAr << " "<< ClignG << " "<< ClignD;
-
-	if (position >= 1) {
-		std::cout << "Les feux de positions sont allumes" << std::endl;
-	} else {
-		std::cout << "Les feux de position sont eteints" << std::endl;
-	}
-
-	if (Croisement >= 1) {
-		std::cout << "Les feux de croisement sont allumes" << std::endl;
-	} else {
-		std::cout << "Les feux de croisement sont eteints" << std::endl;
-	}
-
-	if (Route >= 1) {
-		std::cout << "Les feux de route sont allumes" << std::endl;
-	} else {
-		std::cout << "Les feux de route sont eteints" << std::endl;
-	}
-
-	if (AbAv >= 1) {
-		std::cout << "Les feux de brouillard avant sont allumes" << std::endl;
-	} else {
-		std::cout << "Les feux de brouillard avant sont eteints" << std::endl;
-	}
-
-	if (AbAr >= 1) {
-		std::cout << "Les feux de brouillard arriere sont allumes" << std::endl;
-	} else {
-		std::cout << "Les feux de brouillard arriere sont eteints" << std::endl;
-	}
-
-	if (ClignD >= 1) {
-		std::cout << "Le clignotant droit est allume" << std::endl;
-	} else {
-		std::cout << "Le clignotant droit est eteint" << std::endl;
-	}
-
-	if (ClignG >= 1) {
-		std::cout << "Le clignotant gauche est allume" << std::endl;
-	} else {
-		std::cout << "Le clignotant gauche est eteint" << std::endl;
-	}
-
-}
+//unsigned int ChaineHexaVersInt(char* chaineHexa, int nbCar){
+//	int nombre=0,j = 0;
+//	char caractere;
+//	for( j=0 ; j<nbCar ; j++ ){
+//		caractere = chaineHexa[j];
+//		//std::cout << "Le caractere : " << caractere << std::endl;
+//		if(caractere >='0' && caractere <= '9'){
+//			nombre = nombre + ((caractere -'0')<<(4*(nbCar-j-1)));
+//			//std::cout << "Le nombre : " << nombre << std::endl;
+//		}
+//		else{
+//			nombre = nombre + ((caractere - 'A'+10)<<(4*(nbCar-j-1)));
+//			//std::cout << "Le nombre : " << nombre << std::endl;
+//		}
+//	}
+//	return nombre;
+//}
+//
+//void EtatDesFeux(int Valeur){
+//
+//	int position = Valeur & (0x01 << 7);
+//	int Croisement = Valeur & (0x01 << 6);
+//	int Route = Valeur & (0x01 << 5);
+//	int AbAv = Valeur & (0x01 << 4);
+//	int AbAr = Valeur & (0x01 << 3);
+//	int ClignD = Valeur & (0x01 << 2);
+//    int ClignG = Valeur & (0x01 << 1);
+//
+//	//std::cout <<  Valeur << " "<<  position << " "<<  Croisement << " "<< Route << " "<< AbAv << " "<< AbAr << " "<< ClignG << " "<< ClignD;
+//
+//	if (position >= 1) {
+//		std::cout << "Les feux de positions sont allumes" << std::endl;
+//	} else {
+//		std::cout << "Les feux de position sont eteints" << std::endl;
+//	}
+//
+//	if (Croisement >= 1) {
+//		std::cout << "Les feux de croisement sont allumes" << std::endl;
+//	} else {
+//		std::cout << "Les feux de croisement sont eteints" << std::endl;
+//	}
+//
+//	if (Route >= 1) {
+//		std::cout << "Les feux de route sont allumes" << std::endl;
+//	} else {
+//		std::cout << "Les feux de route sont eteints" << std::endl;
+//	}
+//
+//	if (AbAv >= 1) {
+//		std::cout << "Les feux de brouillard avant sont allumes" << std::endl;
+//	} else {
+//		std::cout << "Les feux de brouillard avant sont eteints" << std::endl;
+//	}
+//
+//	if (AbAr >= 1) {
+//		std::cout << "Les feux de brouillard arriere sont allumes" << std::endl;
+//	} else {
+//		std::cout << "Les feux de brouillard arriere sont eteints" << std::endl;
+//	}
+//
+//	if (ClignD >= 1) {
+//		std::cout << "Le clignotant droit est allume" << std::endl;
+//	} else {
+//		std::cout << "Le clignotant droit est eteint" << std::endl;
+//	}
+//
+//	if (ClignG >= 1) {
+//		std::cout << "Le clignotant gauche est allume" << std::endl;
+//	} else {
+//		std::cout << "Le clignotant gauche est eteint" << std::endl;
+//	}
+//
+//}
 
  int main()
 {
 
-
+	CombineC4 MaCombine;
 	IRClientTCP monclient;
 	char trameCAN[50];
 	char idCAN[10];
@@ -112,6 +112,8 @@ void EtatDesFeux(int Valeur){
 		monclient.SeConnecterAUnServeur("127.0.0.1", 4111);
 		monclient.Envoyer(idCAN,strlen(idCAN));
 		monclient.Recevoir(trameCAN,50);
+
+		MaCombine.EnregistreDonnesCAN(idCAN, trameCAN);
 		std::cout << trameCAN << std::endl << std::endl;
 
 		if (Repeter == true) {
@@ -122,12 +124,13 @@ void EtatDesFeux(int Valeur){
 					monclient.SeConnecterAUnServeur("127.0.0.1", 4111);
 					monclient.Envoyer(idCAN,strlen(idCAN));
 					monclient.Recevoir(trameCAN,50);
+					MaCombine.EnregistreDonnesCAN(idCAN, trameCAN);
+
+
 					std::cout << "Trame Moteur : " << trameCAN << std::endl;
-					int VitesseEnKmh =  (ChaineHexaVersInt(trameCAN+23, 2)) * 2.55;
-					std::cout << "Trame vers hexa : " << ChaineHexaVersInt(trameCAN+23, 2) << std::endl;
-					std::cout << "La vitesse : " << VitesseEnKmh << " km/h" << std::endl;
-					int RegimeMoteur = (ChaineHexaVersInt(trameCAN+19,2)) *100 /3.1;
-					std::cout << "Le regime moteur : " << RegimeMoteur << " tr/min" << std::endl << std::endl;
+					std::cout << "Trame hexa vers int : " << MaCombine.ChaineHexaVersInt(trameCAN+23, 2) << std::endl;
+					std::cout << "La vitesse : " << MaCombine.Vitesse() << " km/h" << std::endl;
+					std::cout << "Le regime moteur : " << MaCombine.Regime() << " tr/min" << std::endl << std::endl;
 					Sleep(500);
 
 
@@ -137,11 +140,14 @@ void EtatDesFeux(int Valeur){
 					monclient.SeConnecterAUnServeur("127.0.0.1", 4111);
 					monclient.Envoyer(idCAN,strlen(idCAN));
 					monclient.Recevoir(trameCAN,50);
+					MaCombine.EnregistreDonnesCAN(idCAN, trameCAN);
+
+
 					std::cout << "Trame Feux : " << trameCAN << std::endl;
-					std::cout << "Trame vers hexa : " << ChaineHexaVersInt(trameCAN+23, 2) << std::endl ;
-					int EtatFeux = ChaineHexaVersInt(trameCAN+27, 2)  ;
+					std::cout << "Trame vers hexa : " << MaCombine.ChaineHexaVersInt(trameCAN+23, 2) << std::endl ;
+
 					std::cout << "L'etat des feux : " << std::endl;
-					EtatDesFeux(EtatFeux);
+					std::cout << "Feux de croisement allume : " << MaCombine.Croisement();
 					std::cout << std::endl<< std::endl << std::endl;
 					Sleep(5000);
 				}

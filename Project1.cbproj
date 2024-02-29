@@ -94,6 +94,12 @@
         <BCC_PCHName_Clang>Project1PCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="combinec4.cpp">
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <None Include="combinec4.h">
+            <BuildOrder>4</BuildOrder>
+        </None>
         <CppCompile Include="IRClientTCP.cpp">
             <BuildOrder>2</BuildOrder>
         </CppCompile>

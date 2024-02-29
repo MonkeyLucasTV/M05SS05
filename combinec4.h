@@ -9,7 +9,8 @@ class CombineC4   {
 	int vitesse;
 	int regime;
 	bool croisement;
-	bool antiBrouillard;
+	bool AbAv;
+	bool AbAr;
 	bool route;
 	bool clignoD;
 	bool position;
@@ -25,9 +26,10 @@ class CombineC4   {
 	int Vitesse();
 	int Regime();
 	int Croisement();
-	int AntiBrouillard();
+	int AntiBrouillardAvant();
+	int AntiBrouillardArriere();
 	int Route();
-	int ClignD();
-	int ClignG();
+	int ClingoD();
+	int ClignoG();
 	int Position();
 };
