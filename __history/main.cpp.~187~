@@ -112,7 +112,7 @@ void EtatDesFeux(int Valeur){
 		monclient.SeConnecterAUnServeur("127.0.0.1", 4111);
 		monclient.Envoyer(idCAN,strlen(idCAN));
 		monclient.Recevoir(trameCAN,50);
-		std::cout << trameCAN << std::endl << std::endl;
+		std::cout << trameCAN << std::endl;
 
 		if (Repeter == true) {
 				while(true){
@@ -142,7 +142,7 @@ void EtatDesFeux(int Valeur){
 					int EtatFeux = ChaineHexaVersInt(trameCAN+27, 2)  ;
 					std::cout << "L'etat des feux : " << std::endl;
 					EtatDesFeux(EtatFeux);
-					std::cout << std::endl<< std::endl << std::endl;
+					std::cout << std::endl<< std::endl
 					Sleep(5000);
 				}
 		}

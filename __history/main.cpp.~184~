@@ -23,6 +23,62 @@ unsigned int ChaineHexaVersInt(char* chaineHexa, int nbCar){
 	return nombre;
 }
 
+void EtatDesFeux(int Valeur){
+
+	int position = Valeur & (0x01 << 7);
+	int Croisement = Valeur & (0x01 << 6);
+	int Route = Valeur & (0x01 << 5);
+	int AbAv = Valeur & (0x01 << 4);
+	int AbAr = Valeur & (0x01 << 3);
+	int ClignD = Valeur & (0x01 << 2);
+    int ClignG = Valeur & (0x01 << 1);
+
+	//std::cout <<  Valeur << " "<<  position << " "<<  Croisement << " "<< Route << " "<< AbAv << " "<< AbAr << " "<< ClignG << " "<< ClignD;
+
+	if (position >= 1) {
+		std::cout << "Les feux de positions sont allumes" << std::endl;
+	} else {
+		std::cout << "Les feux de position sont eteints" << std::endl;
+	}
+
+	if (Croisement >= 1) {
+		std::cout << "Les feux de croisement sont allumes" << std::endl;
+	} else {
+		std::cout << "Les feux de croisement sont eteints" << std::endl;
+	}
+
+	if (Route >= 1) {
+		std::cout << "Les feux de route sont allumes" << std::endl;
+	} else {
+		std::cout << "Les feux de route sont eteints" << std::endl;
+	}
+
+	if (AbAv >= 1) {
+		std::cout << "Les feux de brouillard avant sont allumes" << std::endl;
+	} else {
+		std::cout << "Les feux de brouillard avant sont eteints" << std::endl;
+	}
+
+	if (AbAr >= 1) {
+		std::cout << "Les feux de brouillard arriere sont allumes" << std::endl;
+	} else {
+		std::cout << "Les feux de brouillard arriere sont eteints" << std::endl;
+	}
+
+	if (ClignD >= 1) {
+		std::cout << "Le clignotant droit est allume" << std::endl;
+	} else {
+		std::cout << "Le clignotant droit est eteint" << std::endl;
+	}
+
+	if (ClignG >= 1) {
+		std::cout << "Le clignotant gauche est allume" << std::endl;
+	} else {
+		std::cout << "Le clignotant gauche est eteint" << std::endl;
+	}
+
+}
+
  int main()
 {
 
@@ -69,13 +125,11 @@ unsigned int ChaineHexaVersInt(char* chaineHexa, int nbCar){
 					std::cout << "Trame Moteur : " << trameCAN << std::endl;
 					int VitesseEnKmh =  (ChaineHexaVersInt(trameCAN+23, 2)) * 2.55;
 					std::cout << "Trame vers hexa : " << ChaineHexaVersInt(trameCAN+23, 2) << std::endl;
-					std::cout << "La vitesse : " << VitesseEnKmh << " km/h" << std::endl ;
-
-					int RegimeMoteur = (ChaineHexaVersInt(trameCAN+0,2)) *100 /3.1;
-					std::cout << "Le regime moteur : " << RegimeMoteur << " tr/min" << endl;
-
-
+					std::cout << "La vitesse : " << VitesseEnKmh << " km/h" << std::endl;
+					int RegimeMoteur = (ChaineHexaVersInt(trameCAN+19,2)) *100 /3.1;
+					std::cout << "Le regime moteur : " << RegimeMoteur << " tr/min" << std::endl << std::endl;
 					Sleep(500);
+
 
 
 					strcpy(idCAN, "128");
@@ -84,15 +138,13 @@ unsigned int ChaineHexaVersInt(char* chaineHexa, int nbCar){
 					monclient.Envoyer(idCAN,strlen(idCAN));
 					monclient.Recevoir(trameCAN,50);
 					std::cout << "Trame Feux : " << trameCAN << std::endl;
-					std::cout << "Trame vers hexa : " << ChaineHexaVersInt(trameCAN+23, 2) << std::endl << std::endl;
+					std::cout << "Trame vers hexa : " << ChaineHexaVersInt(trameCAN+23, 2) << std::endl << std::endl << std::endl;
+					int EtatFeux = ChaineHexaVersInt(trameCAN+27, 2)  ;
+					std::cout << "L'etat des feux : " << std::endl;
+					EtatDesFeux(EtatFeux);
 					Sleep(5000);
 				}
 		}
-
-
-
-
-
 	}
 	return 0;
 }

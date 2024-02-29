@@ -112,7 +112,7 @@ void EtatDesFeux(int Valeur){
 		monclient.SeConnecterAUnServeur("127.0.0.1", 4111);
 		monclient.Envoyer(idCAN,strlen(idCAN));
 		monclient.Recevoir(trameCAN,50);
-		std::cout << trameCAN << std::endl << std::endl;
+		std::cout << trameCAN << std::endl << std::endl=;
 
 		if (Repeter == true) {
 				while(true){
