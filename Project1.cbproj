@@ -94,7 +94,13 @@
         <BCC_PCHName_Clang>Project1PCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <ItemGroup>
-        <CppCompile Include="File2.cpp">
+        <CppCompile Include="IRClientTCP.cpp">
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <None Include="IRClientTCP.h">
+            <BuildOrder>3</BuildOrder>
+        </None>
+        <CppCompile Include="main.cpp">
             <BuildOrder>1</BuildOrder>
         </CppCompile>
         <PCHCompile Include="Project1PCH1.h">
