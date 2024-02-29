@@ -4,7 +4,7 @@ class CombineC4   {
 
 	private:
 
-	char* trame;
+	char* trameCAN;
 	char* idCAN;
 	int vitesse;
 	int regime;

@@ -27,26 +27,27 @@ unsigned int CombineC4::ChaineHexaVersInt(char* chaineHexa, int nbCar){
 }
 
 
-void CombineC4::EnregistreDonnesCAN(char* idCAN, char* trameCAN){
+void CombineC4::EnregistreDonnesCAN(char* idCANO, char* trameCANO){
 
 
-	idCAN = idCAN;
-	trameCAN = trameCAN;
+
+	idCAN = idCANO;
+	trameCAN = trameCANO;
 	vitesse =  (ChaineHexaVersInt(trameCAN+23, 2)) * 2.55;
-    regime = (ChaineHexaVersInt(trameCAN+19,2)) *100 /3.1;
-	strcpy(idCAN, "128");
-	monclient.SeConnecterAUnServeur("127.0.0.1", 4111);
-	monclient.Envoyer(idCAN,strlen(idCAN));
-	monclient.Recevoir(trameCAN,50);
+	regime = (ChaineHexaVersInt(trameCAN+19,2)) *100 /3.1;
+
 	int EtatFeux = ChaineHexaVersInt(trameCAN+27, 2)  ;
 
-	 position = (EtatFeux & (0x01 << 7));
-	 croisement = (EtatFeux & (0x01 << 6));
-	 route = (EtatFeux & (0x01 << 5));
-	 AbAv = (EtatFeux & (0x01 << 4));
-	 AbAr = (EtatFeux & (0x01 << 3));
-	 clignoD = (EtatFeux & (0x01 << 2));
-	 clignoG = (EtatFeux & (0x01 << 1));
+	position = (EtatFeux & (0x01 << 7));
+	croisement = (EtatFeux & (0x01 << 6));
+	route = (EtatFeux & (0x01 << 5));
+	AbAv = (EtatFeux & (0x01 << 4));
+	AbAr = (EtatFeux & (0x01 << 3));
+	clignoD = (EtatFeux & (0x01 << 2));
+	clignoG = (EtatFeux & (0x01 << 1));
+
+
+
 }
 
 

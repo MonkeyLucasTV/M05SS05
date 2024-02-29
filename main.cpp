@@ -4,6 +4,7 @@
 #include<windows.h>
 #include "combinec4.h"
 
+#include <conio.h>
 
 //unsigned int ChaineHexaVersInt(char* chaineHexa, int nbCar){
 //	int nombre=0,j = 0;
@@ -118,9 +119,11 @@
 
 		if (Repeter == true) {
 				while(true){
+					clrscr();
+					std::cout << "Repetition automatique active !" << std::endl << std::endl << std::endl;
+
 
 					strcpy(idCAN, "0B6");
-
 					monclient.SeConnecterAUnServeur("127.0.0.1", 4111);
 					monclient.Envoyer(idCAN,strlen(idCAN));
 					monclient.Recevoir(trameCAN,50);
@@ -131,12 +134,11 @@
 					std::cout << "Trame hexa vers int : " << MaCombine.ChaineHexaVersInt(trameCAN+23, 2) << std::endl;
 					std::cout << "La vitesse : " << MaCombine.Vitesse() << " km/h" << std::endl;
 					std::cout << "Le regime moteur : " << MaCombine.Regime() << " tr/min" << std::endl << std::endl;
-					Sleep(500);
+
 
 
 
 					strcpy(idCAN, "128");
-
 					monclient.SeConnecterAUnServeur("127.0.0.1", 4111);
 					monclient.Envoyer(idCAN,strlen(idCAN));
 					monclient.Recevoir(trameCAN,50);
@@ -145,11 +147,11 @@
 
 					std::cout << "Trame Feux : " << trameCAN << std::endl;
 					std::cout << "Trame vers hexa : " << MaCombine.ChaineHexaVersInt(trameCAN+23, 2) << std::endl ;
-
 					std::cout << "L'etat des feux : " << std::endl;
 					std::cout << "Feux de croisement allume : " << MaCombine.Croisement();
 					std::cout << std::endl<< std::endl << std::endl;
-					Sleep(5000);
+					Sleep(1000);
+
 				}
 		}
 	}
