@@ -3,9 +3,15 @@ package com.example.clientcan;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.clientcan.databinding.ActivityMainBinding;
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,10 +20,11 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("clientcan");
     }
 
-    var idCANBout ="";
+
 
     private ActivityMainBinding binding;
 
+    String idCANBout = "0B6";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,12 +32,53 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        Button Bouton0B6 = binding.button0B6;
+        Button Bouton128 = binding.button128;
+
         // Example of a call to a native method
-        TextView tv = binding.sampleText;
-        tv.setText(stringFromJNI(127.0.0.1,4111,idCANBout));
+        TextView Trame = binding.textViewTrame;
+        //Trame.setText(stringFromJNI("172.20.21.38","4111",idCANBout));
+
+      /*  ScheduledExecutorService timer = Executors.newSingleThreadScheduledExecutor();
+        timer.scheduleAtFixedRate(() -> {
+
+
+
+            if(idCANBout == "0B6"){
+                Trame.setText(stringFromJNI("172.20.21.38","4111", idCANBout));
+                idCANBout = "128";
+            }
+            else {
+
+                Trame.setText(stringFromJNI("172.20.21.38","4111", idCANBout));
+                idCANBout = "0B6";
+
+            }
+
+        }, 0, 5, TimeUnit.SECONDS);*/
+
+        Bouton0B6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String idCANBout = "0B6";
+                Trame.setText(stringFromJNI("172.20.21.38","4111",idCANBout));
+            }
+        });
+
+        Bouton128.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String idCANBout = "128";
+                Trame.setText(stringFromJNI("172.20.21.38","4111",idCANBout));
+            }
+        });
+
     }
 
-    @Override
+
+
+
 
 
     /**

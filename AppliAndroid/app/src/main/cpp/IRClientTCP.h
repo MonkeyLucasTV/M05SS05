@@ -1,6 +1,8 @@
 #ifndef IRCLIENTTCP_H
 #define IRCLIENTTCP_H
 #include <string>
+#include <jni.h>
+
 #define WIN32_LEAN_AND_MEAN
 using namespace std;
 

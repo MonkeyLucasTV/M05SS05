@@ -1,14 +1,11 @@
 ﻿#include "IRClientTCP.h"
 
-#ifdef _WIN32 || _WIN64
-#include <winsock2.h>
-#include <sys/types.h>
-#else
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
-#endif
+#include <unistd.h>  // close()
+
 #include <stdio.h>
 #include <string.h>
 #include <fstream>
@@ -27,19 +24,7 @@ IRClientTCP::IRClientTCP()
     if(nbClientTCP == 0)
     {
         //cout << "Bonjour" << endl;
-#ifdef _WIN32 || _WIN64
-        WSADATA wsaData ;
-        int iResult;
 
-        //cout << "Bonjour 2 " << endl;
-
-        iResult = WSAStartup(MAKEWORD(2,2), &wsaData);
-        if(iResult != 0)
-        {
-            cout << "Initialisation de la DLL Winsock : ERROR." << endl;
-        }
-        //cout << "Initialisation de la DLL Winsock : OK." << endl;
-#endif
 
     }
 
@@ -77,16 +62,15 @@ bool IRClientTCP::SeConnecterAUnServeur(string adresseIPServeur, unsigned short 
 
 bool IRClientTCP::SeDeconnecter()
 {
-#ifdef _WIN32 || _WIN64
-    closesocket(m_maSocket);
-#else
+
     close(m_maSocket);
-#endif
+
+    return true;
 }
 
 bool IRClientTCP::Envoyer(const char * requete,int longueur)
 {
-	int resultat = send(m_maSocket, requete, longueur, 0);
+    int resultat = send(m_maSocket, requete, longueur, 0);
     if(resultat == -1)
     {
         cout << "Envoi du message : ERREUR." << endl;
