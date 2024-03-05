@@ -1,6 +1,7 @@
 #include <jni.h>
 #include <string>
 #include <syslog.h>
+#include "combinec4.h"
 #include <string.h>
 #include "IRClientTCP.h"
 #include <stdio.h>
@@ -29,12 +30,25 @@ Java_com_example_clientcan_MainActivity_stringFromJNI(
 
 
     IRClientTCP Client;
+    CombineC4 komb;
+
     Client.SeConnecterAUnServeur(m_adresseIPServeur, m_portServeur);
     Client.Envoyer(IDCAN.c_str(),IDCAN.length());
     Client.Recevoir(trameCAN, 50);
 
 
-    return env->NewStringUTF(trameCAN);
+    komb.EnregistreDonnesCAN(const_cast<char *>(IDCAN.c_str()), trameCAN);
+    char donnees[500];
+    if(IDCAN=="0B6")
+    { sprintf(donnees,"%d %d",komb.Vitesse(),komb.Regime());
+    }
+    else
+    { sprintf(donnees,"%d %d %d %d %d",
+              komb.Croisement(),komb.Route(),komb.AntiBrouillardArriere(),
+              komb.ClignoD(),komb.ClignoG());
+    }
+
+    return env->NewStringUTF(donnees);
 
 
 }

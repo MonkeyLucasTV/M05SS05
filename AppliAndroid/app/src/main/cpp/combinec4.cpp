@@ -79,7 +79,7 @@ int CombineC4::Route(){
 }
 
 
-int CombineC4::ClingoD(){
+int CombineC4::ClignoD(){
 	return clignoD;
 }
 

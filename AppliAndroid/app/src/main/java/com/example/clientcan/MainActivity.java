@@ -70,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String idCANBout = "128";
-                Trame.setText(stringFromJNI("172.20.21.38","4111",idCANBout));
+                String feux = stringFromJNI("172.20.21.38","4111",idCANBout);
+                String Tableaux[] = feux.split(" ");
+
+                Trame.setText("Feux de croisement : "+Tableaux[0]+ " \nFeux de route : "+Tableaux[1]+" \nFeux Antibrouillard : " +Tableaux[2]+ " \nClignotant Droit : " +Tableaux[3]+" \nClignotant Gauche : " +Tableaux[4]);
             }
         });
 

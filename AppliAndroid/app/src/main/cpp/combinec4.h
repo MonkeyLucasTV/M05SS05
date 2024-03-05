@@ -29,7 +29,7 @@ class CombineC4   {
 	int AntiBrouillardAvant();
 	int AntiBrouillardArriere();
 	int Route();
-	int ClingoD();
+	int ClignoD();
 	int ClignoG();
 	int Position();
 };
