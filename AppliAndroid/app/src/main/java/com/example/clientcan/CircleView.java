@@ -13,6 +13,7 @@ import android.view.View;
 public class CircleView extends View {
     private Paint circlePaint;
     private Paint linePaint;
+    private Paint linePaint2;
     private int angle;
 
     public CircleView(Context context, AttributeSet attrs) {
@@ -27,8 +28,11 @@ public class CircleView extends View {
         circlePaint.setStyle(Paint.Style.STROKE);
         circlePaint.setStrokeWidth(3);
         linePaint = new Paint();
+        linePaint2 = new Paint();
         linePaint.setColor(Color.rgb(62, 124, 120));
         linePaint.setStrokeWidth(2);
+        linePaint2.setColor(Color.rgb(255,0,0));
+        linePaint2.setStrokeWidth(2);
     }
 
     @Override
