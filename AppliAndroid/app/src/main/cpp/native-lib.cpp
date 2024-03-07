@@ -12,7 +12,7 @@ extern "C" JNIEXPORT jstring JNICALL
 Java_com_example_clientcan_MainActivity_stringFromJNI(
         JNIEnv* env,
         jobject /* this */, jstring ip,jstring port, jstring idCAN) {
-    std::string hello = "Hello from C++";
+
 
 
 
@@ -38,6 +38,7 @@ Java_com_example_clientcan_MainActivity_stringFromJNI(
 
 
     komb.EnregistreDonnesCAN(const_cast<char *>(IDCAN.c_str()), trameCAN);
+
     char donnees[500];
     if(IDCAN=="0B6")
     { sprintf(donnees,"%d %d",komb.Vitesse(),komb.Regime());
