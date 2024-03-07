@@ -40,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Button BoutIp ;
-   private EditText InputIp;
-   private String Ip;
+    private EditText InputIp;
+    private EditText InputPort;
+    private String Ip;
+    private String Port;
     private Button Bouton0B6;
     private TextView TextLog;
     private TextView TxtRgm;
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         CircleView circleView2 = findViewById(R.id.circleView2);
 
         BoutIp = findViewById(R.id.ValidButt);
+        InputPort = findViewById(R.id.EditPort);
         InputIp = findViewById(R.id.InputIp);
         TextLog = findViewById(R.id.sample_text);
         Bouton0B6 = findViewById(R.id.button0B6);
@@ -177,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                Ip = String.valueOf(InputIp.getText());
+               Port = String.valueOf(InputPort.getText());
                TextLog.setText(Ip);
             }
         });

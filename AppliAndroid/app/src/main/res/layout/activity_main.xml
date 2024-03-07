@@ -66,15 +66,16 @@
 
     <Button
         android:id="@+id/button0B6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="81dp"
         android:text="Scan"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <TextView
         android:id="@+id/textView_trame"
@@ -160,8 +161,8 @@
         android:id="@+id/ValidButt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="304dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="284dp"
+        android:layout_marginTop="16dp"
         android:text="Valider"
         app:layout_constraintStart_toEndOf="@+id/InputIp"
         app:layout_constraintTop_toTopOf="parent" />
@@ -181,13 +182,15 @@
         app:layout_constraintVertical_bias="0.016" />
 
     <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="213dp"
-        android:layout_height="67dp"
+        android:id="@+id/EditPort"
+        android:layout_width="147dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="407dp"
-        tools:layout_editor_absoluteY="8dp" />
+        android:text="4111"
+        app:layout_constraintStart_toEndOf="@+id/InputIp"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
