@@ -11,6 +11,7 @@
 #include <Vcl.Forms.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
+#include <Vcl.Graphics.hpp>
 #include <string>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Imaging.pngimage.hpp>
@@ -31,7 +32,10 @@ __published:	// Composants gérés par l'EDI
 	TLabel *Label1;
 	TLabel *Label2;
 	TTimer *Timer1;
+	TLabel *Kmh;
+	TLabel *trmin;
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
 private:	// Déclarations utilisateur
 	IRClientTCP Client ;
 	CombineC4 MaComb      ;

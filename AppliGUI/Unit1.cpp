@@ -24,21 +24,31 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 	port = AnsiString(InputPort->Text).c_str();
 
 
-	short m_port = atoi(port.c_str())
 
 	Timer1->Enabled = true;
+
+
+
+
+
+
+
+
+
+
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
+{
+
 	char TrameCAN[50];
 	char idCAN[10];
-
-
-
-	while(Timer1){
-
-
+	short m_port = atoi(port.c_str());
 
 		strcpy(idCAN,"128");
 		Client.SeConnecterAUnServeur(ip,m_port);
-		Client.Envoyer(idCAN,idCAN.length());
+		Client.Envoyer(idCAN,strlen(idCAN));
 		Client.Recevoir(TrameCAN,50);
 
 
@@ -52,14 +62,14 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 
 		strcpy(idCAN,"0B6");
 		Client.SeConnecterAUnServeur(ip,m_port);
-		Client.Envoyer(idCAN.c_str(),idCAN.length());
+		Client.Envoyer(idCAN,strlen(idCAN));
 		Client.Recevoir(TrameCAN,50);
-
-
 		MaComb.EnregistreDonnesCAN(idCAN, TrameCAN);
+		std::string k =  MaComb.Vitesse() + " kmh";
+		std::string r =MaComb.Regime() + " trmin";
 
-	}
-
-
+		Kmh->Caption = AnsiString(k.c_str());
+		trmin->Caption = AnsiString(r.c_str());
 }
 //---------------------------------------------------------------------------
+
