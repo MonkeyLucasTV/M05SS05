@@ -1132,7 +1132,7 @@ object Form1: TForm1
     Transparent = True
   end
   object ClignoD: TImage
-    Left = 552
+    Left = 537
     Top = 488
     Width = 105
     Height = 105
@@ -50349,15 +50349,15 @@ object Form1: TForm1
   object Kmh: TLabel
     Left = 184
     Top = 424
-    Width = 57
-    Height = 33
+    Width = 32
+    Height = 13
     Caption = '0 km/h'
   end
   object trmin: TLabel
     Left = 792
     Top = 424
-    Width = 73
-    Height = 25
+    Width = 37
+    Height = 13
     Caption = '0 tr/min'
   end
   object InputIp: TEdit
@@ -50366,7 +50366,7 @@ object Form1: TForm1
     Width = 177
     Height = 21
     TabOrder = 0
-    Text = '172.20.21.38'
+    Text = '192.168.1.50'
   end
   object InputPort: TEdit
     Left = 528
@@ -50385,10 +50385,54 @@ object Form1: TForm1
     TabOrder = 2
     OnClick = Button1Click
   end
+  object TrackBar1: TTrackBar
+    Left = 32
+    Top = 496
+    Width = 321
+    Height = 45
+    DoubleBuffered = True
+    Max = 360
+    ParentDoubleBuffered = False
+    TabOrder = 3
+    OnChange = TrackBar1Change
+  end
+  object TrackBar2: TTrackBar
+    Left = 648
+    Top = 488
+    Width = 321
+    Height = 45
+    DoubleBuffered = True
+    Max = 360
+    ParentDoubleBuffered = False
+    TabOrder = 4
+    OnChange = TrackBar2Change
+  end
+  object Button2: TButton
+    Left = 880
+    Top = 22
+    Width = 75
+    Height = 25
+    Caption = 'Stop'
+    TabOrder = 5
+    OnClick = Button2Click
+  end
   object Timer1: TTimer
     Enabled = False
+    Interval = 500
     OnTimer = Timer1Timer
-    Left = 944
+    Left = 912
     Top = 576
+  end
+  object Timer2: TTimer
+    Enabled = False
+    OnTimer = Timer2Timer
+    Left = 624
+    Top = 432
+  end
+  object Timer3: TTimer
+    Enabled = False
+    OnTimer = Timer3Timer
+    Left = 352
+    Top = 424
   end
 end
