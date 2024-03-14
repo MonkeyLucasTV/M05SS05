@@ -105,14 +105,14 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 
 void __fastcall TForm1::TrackBar1Change(TObject *Sender)
 {
-	  Aiguille(Image6,TrackBar1,x1,y1);
+
 	  Timer3->Enabled = true;
 	}
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::TrackBar2Change(TObject *Sender)
 {
-	  Aiguille(Image7,TrackBar2,x2,y2);
+	
 	  Timer2->Enabled = true;
 }
 //---------------------------------------------------------------------------
