@@ -50425,12 +50425,14 @@ object Form1: TForm1
   end
   object Timer2: TTimer
     Enabled = False
+    Interval = 100
     OnTimer = Timer2Timer
     Left = 624
     Top = 432
   end
   object Timer3: TTimer
     Enabled = False
+    Interval = 100
     OnTimer = Timer3Timer
     Left = 352
     Top = 424

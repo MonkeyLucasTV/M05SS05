@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2024/02/28 15:07:34.000.649,=C:\Users\lpokrywa\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
     <Transaction>2024/02/28 15:07:34.000.657,=C:\Users\lpokrywa\Documents\Embarcadero\Studio\Projets\File2.cpp</Transaction>
-    <Transaction>2024/02/28 15:08:15.000.794,C:\Users\lpokrywa\Documents\Embarcadero\Studio\Projets\File2.cpp=C:\Users\lpokrywa\Desktop\M05SS05\File2.cpp</Transaction>
-    <Transaction>2024/02/28 15:08:17.000.872,C:\Users\lpokrywa\Documents\Embarcadero\Studio\Projets\Project1.cbproj=C:\Users\lpokrywa\Desktop\M05SS05\Project1.cbproj</Transaction>
-    <Transaction>2024/02/28 15:08:17.000.180,C:\Users\lpokrywa\Documents\Embarcadero\Studio\Projets\Project1PCH1.h=C:\Users\lpokrywa\Desktop\M05SS05\Project1PCH1.h</Transaction>
-    <Transaction>2024/02/28 15:09:03.000.822,=C:\Users\lpokrywa\Desktop\M05SS05\IRClientTCP.cpp</Transaction>
+    <Transaction>2024/02/28 15:07:34.000.649,=C:\Users\lpokrywa\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2024/02/28 15:08:15.000.794,C:\Users\lpokrywa\Desktop\M05SS05\File2.cpp=C:\Users\lpokrywa\Documents\Embarcadero\Studio\Projets\File2.cpp</Transaction>
+    <Transaction>2024/02/28 15:08:17.000.180,C:\Users\lpokrywa\Desktop\M05SS05\Project1PCH1.h=C:\Users\lpokrywa\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2024/02/28 15:08:17.000.872,C:\Users\lpokrywa\Desktop\M05SS05\Project1.cbproj=C:\Users\lpokrywa\Documents\Embarcadero\Studio\Projets\Project1.cbproj</Transaction>
     <Transaction>2024/02/28 15:09:03.000.827,=C:\Users\lpokrywa\Desktop\M05SS05\IRClientTCP.h</Transaction>
-    <Transaction>2024/02/28 15:09:10.000.278,C:\Users\lpokrywa\Desktop\M05SS05\File2.cpp=C:\Users\lpokrywa\Desktop\M05SS05\main.cpp</Transaction>
+    <Transaction>2024/02/28 15:09:03.000.822,=C:\Users\lpokrywa\Desktop\M05SS05\IRClientTCP.cpp</Transaction>
+    <Transaction>2024/02/28 15:09:10.000.278,C:\Users\lpokrywa\Desktop\M05SS05\main.cpp=C:\Users\lpokrywa\Desktop\M05SS05\File2.cpp</Transaction>
     <Transaction>2024/02/29 09:16:47.000.572,=C:\Users\lpokrywa\Desktop\M05SS05\File1.h</Transaction>
-    <Transaction>2024/02/29 09:19:19.000.331,C:\Users\lpokrywa\Desktop\M05SS05\File1.h=C:\Users\lpokrywa\Desktop\M05SS05\combinec4.h</Transaction>
-    <Transaction>2024/02/29 09:19:24.000.557,C:\Users\lpokrywa\Desktop\M05SS05\combinec4.h=C:\Users\lpokrywa\Desktop\M05SS05\;.h</Transaction>
-    <Transaction>2024/02/29 09:26:13.000.723,C:\Users\lpokrywa\Desktop\M05SS05\;.h=C:\Users\lpokrywa\Desktop\M05SS05\combinec4.h</Transaction>
+    <Transaction>2024/02/29 09:19:19.000.331,C:\Users\lpokrywa\Desktop\M05SS05\combinec4.h=C:\Users\lpokrywa\Desktop\M05SS05\File1.h</Transaction>
+    <Transaction>2024/02/29 09:19:24.000.557,C:\Users\lpokrywa\Desktop\M05SS05\;.h=C:\Users\lpokrywa\Desktop\M05SS05\combinec4.h</Transaction>
+    <Transaction>2024/02/29 09:26:13.000.723,C:\Users\lpokrywa\Desktop\M05SS05\combinec4.h=C:\Users\lpokrywa\Desktop\M05SS05\;.h</Transaction>
     <Transaction>2024/02/29 09:26:25.000.973,=C:\Users\lpokrywa\Desktop\M05SS05\File1.cpp</Transaction>
-    <Transaction>2024/02/29 09:27:59.000.554,C:\Users\lpokrywa\Desktop\M05SS05\File1.cpp=C:\Users\lpokrywa\Desktop\M05SS05\combinec4.cpp</Transaction>
+    <Transaction>2024/02/29 09:27:59.000.554,C:\Users\lpokrywa\Desktop\M05SS05\combinec4.cpp=C:\Users\lpokrywa\Desktop\M05SS05\File1.cpp</Transaction>
   </Transactions>
 </BorlandProject>
